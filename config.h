@@ -65,10 +65,10 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function      format             argument */
-	{ uptime,        "[  %s ]  ",      NULL },
+	{ uptime,        "[  %s ] ",       NULL },
 	{ netspeed_tx,   "[  %sB ",        "enp4s0" },
-	{ netspeed_rx,   " %sB ]  ",       "enp4s0" },
-	{ cpu_perc,      "[  %s%% ]  ",    NULL },
-	{ ram_perc,      "[  %s%% ]  ",    NULL },
-	{ datetime,      "|  %s",           "%a %b %e, %T" },
+	{ netspeed_rx,   " %sB ] ",        "enp4s0" },
+	{ cpu_perc,      "[  %s%% ] ",     NULL },
+	{ ram_perc,      "[  %s%% ] ",     NULL },
+	{ datetime,      "| %s",           "%a %b %e, %T" },
 };
