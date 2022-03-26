@@ -72,5 +72,6 @@ static const struct arg args[] = {
 	{ netspeed_rx,   " %7sB",    "enp4s0" }, sep,
 	{ cpu_perc,      " %2s%%",   NULL     }, sep,
 	{ ram_perc,      " %2s%%",   NULL     }, sep,
-	{ datetime,      "%s",        "%a %b %e, %T" }, sep,
+	{ datetime,      "%s",        "%a %b %e, %T" },
+	{ separator,     " %s",       "|" },
 };
