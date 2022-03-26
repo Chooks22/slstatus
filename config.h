@@ -63,13 +63,14 @@ static const char unknown_str[] = "n/a";
  * wifi_perc           WiFi signal in percent          interface name (wlan0)
  * wifi_essid          WiFi ESSID                      interface name (wlan0)
  */
+static const struct arg sep = { separator, " %s ", "|" };
 static const struct arg args[] = {
-	/* function      format             argument */
-	{ uptime,        "[  %s ] ",       NULL },
-	{ run_command,   "[  %3s ] ",       "awk -F \"[][]\" '/%/ { print $2 }' <(amixer sget Master)" },
-	{ netspeed_tx,   "[  %7sB ",        "enp4s0" },
-	{ netspeed_rx,   " %7sB ] ",        "enp4s0" },
-	{ cpu_perc,      "[  %2s%% ] ",     NULL },
-	{ ram_perc,      "[  %2s%% ] ",     NULL },
-	{ datetime,      "| %s",            "%a %b %e, %T" },
+	/* function      format       argument */
+	{ uptime,        " %s",      NULL     }, sep,
+	{ run_command,   " %3s",     "awk -F \"[][]\" '/%/ { print $2 }' <(amixer sget Master)" }, sep,
+	{ netspeed_tx,   " %7sB",    "enp4s0" }, sep,
+	{ netspeed_rx,   " %7sB",    "enp4s0" }, sep,
+	{ cpu_perc,      " %2s%%",   NULL     }, sep,
+	{ ram_perc,      " %2s%%",   NULL     }, sep,
+	{ datetime,      "%s",        "%a %b %e, %T" }, sep,
 };
