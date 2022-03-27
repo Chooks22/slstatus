@@ -67,7 +67,7 @@ static const struct arg sep = { separator, " %s ", "|" };
 static const struct arg args[] = {
 	/* function      format       argument */
 	{ uptime,        " %s",      NULL     }, sep,
-	{ run_command,   " %3s",     "awk -F \"[][]\" '/%/ { print $2 }' <(amixer sget Master)" }, sep,
+  { run_command,   " %3s",    "awk -F \"[][]\" '$(NF-1) == \"on\" { print $2 }' <(amixer sget Master) && echo 'OFF'" }, sep,
 	{ netspeed_tx,   " %7sB",    "enp4s0" }, sep,
 	{ netspeed_rx,   " %7sB",    "enp4s0" }, sep,
 	{ cpu_perc,      " %2s%%",   NULL     }, sep,
