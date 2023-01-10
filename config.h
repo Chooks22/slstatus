@@ -67,7 +67,8 @@ static const struct arg sep = { separator, " %s ", "|" };
 static const struct arg args[] = {
 	/* function      format       argument */
 	{ uptime,        "祥 %s",     NULL     }, sep,
-  { run_command,   " %3s%%",   "pw-volume status | jq .percentage" }, sep,
+  { run_command,   "%s ",       "if $(pamixer --get-mute); then echo ; else echo ; fi" },
+  { run_command,   "%3s%%",     "pamixer --get-volume" }, sep,
 	{ netspeed_tx,   " %7sB",    "enp4s0" }, sep,
 	{ netspeed_rx,   " %7sB",    "enp4s0" }, sep,
 	{ ram_perc,      " %2s%%",   NULL     }, sep,
